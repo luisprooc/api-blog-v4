@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "author": {
+      "type": "string",
+      "maxLength": 20,
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "afiliate_link": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::afiliate-link.afiliate-link",
+      "inversedBy": "post"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "coverImageUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "afiliate_links",
+  "info": {
+    "singularName": "afiliate-link",
+    "pluralName": "afiliate-links",
+    "displayName": "Afiliate Link",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "ProductInfo": {
+      "type": "text",
+      "maxLength": 100
+    },
+    "ProductLink": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "afiliate_link"
+    }
+  }
+}
